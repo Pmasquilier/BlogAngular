@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MaPublicationComponent implements OnInit {
 
-  MaPublicationName = 'ma publicaiton';
+  MaPublicationName = 'ma publication';
 
   constructor() { }
 
@@ -16,6 +16,15 @@ export class MaPublicationComponent implements OnInit {
 
   getName() {
     return this.MaPublicationName;
+  }
+
+  
+  onLike(){
+    console.log("Publication aimée");
+  }
+
+  onDislike(){
+    console.log("Publication désapprouvée");
   }
 
 }
