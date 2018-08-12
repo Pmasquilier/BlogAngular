@@ -1,21 +1,32 @@
-<li class="list-group-item"  [ngStyle]="{color: getColor()}">
-  <h1>
-    Ma publication : {{ publicationName }}
-  </h1>
+<li class="list-group-item" [ngStyle]="{color: getColor()}">
+
+
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-11">
+        <h1  align-middle>
+          Ma publication : {{ publicationName }}
+        </h1>
+      </div>
+      <div class="col-sm-1">
+        <p>
+          {{ publicationDate | date: 'short' }}
+        </p>
+      </div>
+    </div>
+  </div>
+
+
 
   <p>
-      {{ publicationText }}
+    {{ publicationText }}
   </p>
 
-  <button 
-    class="btn btn-success"
-    (click)= "onLike()">
+  <button class="btn btn-success" (click)="onLike()">
     J'aime
   </button>
 
-  <button 
-    class="btn btn-danger"
-    (click)= "onDislike()">
+  <button class="btn btn-danger" (click)="onDislike()">
     Je n'aime pas
   </button>
 </li>

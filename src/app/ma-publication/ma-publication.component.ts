@@ -14,7 +14,11 @@ export class MaPublicationComponent implements OnInit {
   @Input() publicationName: string;
   @Input() publicationText: string;
 
-  constructor() { }
+  publicationDate: Date;
+
+  constructor() {
+    this.publicationDate = new Date()
+   }
 
   ngOnInit() {
   }
