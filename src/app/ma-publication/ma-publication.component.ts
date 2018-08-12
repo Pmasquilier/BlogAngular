@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-ma-publication',
@@ -11,16 +11,14 @@ export class MaPublicationComponent implements OnInit {
    nbLike: number = 0;
    nbDislike: number = 0;
 
-  MaPublicationName = 'ma publication';
+  @Input() publicationName: string;
+  @Input() publicationText: string;
 
   constructor() { }
 
   ngOnInit() {
   }
 
-  getName() {
-    return this.MaPublicationName;
-  }
 
   
   onLike(){

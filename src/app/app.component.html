@@ -20,9 +20,11 @@
         <div class="col-xs-12 ">
           <ul class="list-group">
 
-            <app-ma-publication></app-ma-publication>
-            <app-ma-publication></app-ma-publication>
-            <app-ma-publication></app-ma-publication>
+            <app-ma-publication  *ngFor="let publication of mesPublications"
+              [publicationName] = "publication.name"
+              [publicationText] = "publication.text">
+            </app-ma-publication>
+     
 
           </ul>
         </div>
