@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { MaPublicationComponent } from './ma-publication/ma-publication.component';
+import { MonFormulaireDePublicationComponent } from './mon-formulaire-de-publication/mon-formulaire-de-publication.component';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +9,14 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'monPremierBlog';
+
+  mespublications = [];
+
+  constructor(){
+  }
+
+
+
+
+
 }

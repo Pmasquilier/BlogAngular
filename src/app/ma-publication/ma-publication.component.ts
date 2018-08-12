@@ -7,6 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MaPublicationComponent implements OnInit {
 
+
+   nbLike: number = 0;
+   nbDislike: number = 0;
+
   MaPublicationName = 'ma publication';
 
   constructor() { }
@@ -20,11 +24,13 @@ export class MaPublicationComponent implements OnInit {
 
   
   onLike(){
-    console.log("Publication aimée");
+    console.log("Publication aimée, nombre like =" +this.nbLike);
+    this.nbLike ++;
   }
 
   onDislike(){
-    console.log("Publication désapprouvée");
+    console.log("Publication désapprouvée, nombre dislike =" +this.nbDislike);
+    this.nbDislike ++;
   }
 
 }
