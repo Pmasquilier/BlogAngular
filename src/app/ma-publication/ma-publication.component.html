@@ -1,7 +1,11 @@
-<li class="list-group-item">
+<li class="list-group-item"  [ngStyle]="{color: getColor()}">
   <h1>
-    Ma publication : {{ MaPublicationName }}
+    Ma publication : {{ publicationName }}
   </h1>
+
+  <p>
+      {{ publicationText }}
+  </p>
 
   <button 
     class="btn btn-success"

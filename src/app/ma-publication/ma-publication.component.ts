@@ -30,5 +30,13 @@ export class MaPublicationComponent implements OnInit {
     console.log("Publication désapprouvée, nombre dislike =" +this.nbDislike);
     this.nbDislike ++;
   }
+  getColor(){
+    if (this.nbLike>this.nbDislike){
+      return "green";
+    }
+    else if (this.nbLike<this.nbDislike){
+      return "red";
+    }
+  }
 
 }
