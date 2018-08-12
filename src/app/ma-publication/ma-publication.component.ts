@@ -7,9 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MaPublicationComponent implements OnInit {
 
+  MaPublicationName = 'ma publicaiton';
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  getName() {
+    return this.MaPublicationName;
   }
 
 }
