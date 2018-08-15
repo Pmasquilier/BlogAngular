@@ -1,3 +1,4 @@
+import { PublicationService } from './../services/publication.service';
 import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
@@ -5,43 +6,28 @@ import { Component, OnInit, Input } from '@angular/core';
   templateUrl: './ma-publication.component.html',
   styleUrls: ['./ma-publication.component.scss']
 })
-export class MaPublicationComponent implements OnInit {
-
-
-  nbLike: number = 0;
-  nbDislike: number = 0;
+export class MaPublicationComponent {
 
   @Input() publicationName: string;
   @Input() publicationText: string;
-
+  @Input() indexOfPublication: number;
   publicationDate: Date;
 
-  constructor() {
+  constructor(private publicationService :PublicationService ) {
     this.publicationDate = new Date()
   }
 
-  ngOnInit() {
-
-  }
-
-
-
+  
   onLike() {
-    console.log("Publication aimée, nombre like =" + this.nbLike);
-    this.nbLike++;
+    this.publicationService.onLike(this.indexOfPublication);
   }
 
   onDislike() {
-    console.log("Publication désapprouvée, nombre dislike =" + this.nbDislike);
-    this.nbDislike++;
+    this.publicationService.onDislike(this.indexOfPublication);
   }
-  getColor() {
-    if (this.nbLike > this.nbDislike) {
-      return "green";
-    }
-    else if (this.nbLike < this.nbDislike) {
-      return "red";
-    }
-  }
+ 
 
+
+
+  
 }

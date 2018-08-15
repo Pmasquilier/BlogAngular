@@ -8,20 +8,20 @@ import { MonFormulaireDePublicationComponent } from './mon-formulaire-de-publica
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements OnInit{
+export class AppComponent implements OnInit {
   title = 'monPremierBlog';
 
-  mesPublications : any[];
+  publications: any[];
 
-  
-  
-  constructor(private publicationService : PublicationService){
+  constructor(private publicationService: PublicationService) {
   }
 
-  ngOnInit(){
-    this.mesPublications = this.publicationService.mesPublications;
+  ngOnInit() {
+    this.publications = this.publicationService.mesPublications;
   }
 
-
+  getColor(i: number) {
+    return this.publicationService.getColor(i);
+  }
 
 }

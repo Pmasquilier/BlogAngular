@@ -14,22 +14,26 @@
   </div>
 
 
-  <div class="container">
+  <div class="container" >
 
-      <div class="row">
-        <div class="col-xs-12 ">
-          <ul class="list-group">
+    <div class="row">
+      <div class="col-xs-12" >
+        <ul class="list-group"  >
+          
+          <app-ma-publication 
+            
+            *ngFor="let publication of publications; let i = index" 
+            [ngStyle]="{color: getColor(i)}"
+            [publicationName]="publication.name" 
+            [publicationText]="publication.text"
+            [indexOfPublication]="i">
+          </app-ma-publication>
 
-            <app-ma-publication  *ngFor="let publication of mesPublications"
-              [publicationName] = "publication.name"
-              [publicationText] = "publication.text">
-            </app-ma-publication>
-     
 
-          </ul>
-        </div>
+        </ul>
       </div>
     </div>
+  </div>
 
 
 </div>
