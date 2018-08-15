@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { PublicationService } from './services/publication.service';
+import { Component, OnInit } from '@angular/core';
 import { MaPublicationComponent } from './ma-publication/ma-publication.component';
 import { MonFormulaireDePublicationComponent } from './mon-formulaire-de-publication/mon-formulaire-de-publication.component';
 
@@ -7,25 +8,20 @@ import { MonFormulaireDePublicationComponent } from './mon-formulaire-de-publica
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
+export class AppComponent implements OnInit{
   title = 'monPremierBlog';
 
-  mesPublications = [
-    {
-      name : "1ère publication",
-      text : "Iam in altera philosophiae parte. quae est quaerendi ac disserendi, quae logikh dicitur, iste vester plane, ut mihi quidem videtur, inermis ac nudus est. tollit definitiones, nihil de dividendo ac partiendo docet, non quo modo efficiatur concludaturque ratio tradit, non qua via captiosa solvantur "
-    },
-    {
-      name : "2ème publication",
-      text : "Iam in altera philosophiae parte. quae est quaerendi ac disserendi, quae logikh dicitur, iste vester plane, ut mihi quidem videtur, inermis ac nudus est. tollit definitiones, nihil de dividendo ac partiendo docet, non quo modo efficiatur concludaturque ratio tradit, non qua via captiosa solvantur "
-    },
-    {
-      name : "3ème publication",
-      text : "Iam in altera philosophiae parte. quae est quaerendi ac disserendi, quae logikh dicitur, iste vester plane, ut mihi quidem videtur, inermis ac nudus est. tollit definitiones, nihil de dividendo ac partiendo docet, non quo modo efficiatur concludaturque ratio tradit, non qua via captiosa solvantur "
-    }
-  ];
+  mesPublications : any[];
+
   
-  constructor(){
+  
+  constructor(private publicationService : PublicationService){
   }
+
+  ngOnInit(){
+    this.mesPublications = this.publicationService.mesPublications;
+  }
+
+
 
 }
